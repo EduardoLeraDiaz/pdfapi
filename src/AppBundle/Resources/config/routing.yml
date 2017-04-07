@@ -1,0 +1,9 @@
+users:
+    type:     rest
+    resource: AppBundle\Controller\DocumentController
+
+portal_index:
+  path:  '/'
+  defaults: { _controller: AppBundle:Document:index}
+
+

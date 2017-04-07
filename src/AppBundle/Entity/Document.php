@@ -7,10 +7,10 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * DocumentPDF
  *
- * @ORM\Table(name="document_p_d_f")
+ * @ORM\Table(name="documents")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\DocumentPDFRepository")
  */
-class DocumentPDF
+class Document
 {
     /**
      * @var int

@@ -3,10 +3,12 @@
 namespace AppBundle\Controller;
 
 use FOS\RestBundle\Controller\FOSRestController;
+use Symfony\Component\HttpFoundation\Response;
 
-class DocumentPDFController extends FOSRestController
+class DocumentController extends FOSRestController
 {
-    public function getDocumentPDFsAction()
+    
+    public function getDocumentsAction()
     {
         return json_encode(
             [
@@ -21,17 +23,17 @@ class DocumentPDFController extends FOSRestController
         );
     }
 
-    public function postDocumentPDFAction()
+    public function postDocumentAction()
     {
 
     }
 
-    public function deleteDocumentPDFAction($id)
+    public function deleteDocumentAction($id)
     {
 
     }
 
     public function indexAction() {
-        return $this->render("hello world");
+        return new response("hello world");
     }
 }
