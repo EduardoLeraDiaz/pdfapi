@@ -88,27 +88,6 @@ class FeatureContext implements context
 
         return $content;
     }
-
-    /*
-     * Sends HTTP request to specific URL with field values from Table.
-     *
-     * @param string $method request method
-     * @param string $uri relative url
-     * @param TableNode $post table of post values
-     *
-     */
-/*    public function iSendARequestWithPDFandValues($method, $uri, TableNode $post)
-    {
-        $fields = [];
-        foreach ($post->getRowsHash() as $key => $val) {
-            $fields[$key] = $this->replacePlaceHolder($val);
-        }
-
-        $bodyOption = [json_encode($fields)];
-
-        $request = new Request($uri, $method, null, null, null, null);
-        $this->response = $this->kernel->handle($request);
-    }*/
 }
 
 
