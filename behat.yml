@@ -3,13 +3,13 @@ default:
         '': %paths.base%/features/bootstrap
     extensions:
         Behat\WebApiExtension:
-            base_url: http://localhost:8000
+            base_url: http://localhost:8000/app_test.php
         Behat\RestTestingExtension:
         Behat\MinkExtension:
             sessions:
                 default:
                     symfony2: ~
-            base_url: http://localhost:8000
+            base_url: http://localhost:8000/app_test.php
             show_auto:    false
         Behat\Symfony2Extension:
             kernel:
