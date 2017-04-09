@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * DocumentPDF
  *
  * @ORM\Table(name="documents")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\DocumentPDFRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\DocumentRepository")
  */
 class Document
 {
@@ -33,7 +33,7 @@ class Document
     /**
      * @var string
      *
-     * @ORM\Column(name="Description", type="string", length=255)
+     * @ORM\Column(name="Description", type="string", length=255, nullable=true)
      */
     private $description;
 

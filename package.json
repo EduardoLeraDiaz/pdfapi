@@ -1,0 +1,36 @@
+{
+  "name": "PDF-Api",
+  "version": "0.0.1",
+  "private": true,
+  "license": "UNLICENSED",
+  "contributors": [
+    {
+      "name": "Eduardo Lera Diaz",
+      "email": "eduardo.diaz@movingimage.com"
+    }
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.5",
+    "clean-css": "^3.4.8",
+    "font-awesome": "^4.4.0",
+    "jquery": "^2.1.4",
+    "jscs": "^2.5.1",
+    "jshint": "^2.8.0",
+    "jshint-stylish": "^2.1.0",
+    "json-loader": "^0.5.3",
+    "less": "^2.5.3",
+    "less-plugin-autoprefix": "^1.5.1",
+    "webpack": "^1.12.6"
+  },
+  "scripts": {
+    "postinstall": "npm run build",
+    "prebuild": "mkdir -p web/fonts web/js",
+    "build": "npm run build:fonts && npm run build:css && npm run jscs && npm run jshint && npm run build:js && npm run build:js",
+    "build:css": "lessc --autoprefix='last 2 versions,ie 9' src/AppBundle/Resources/less/style.less web/style.css && cleancss --source-map -o web/style.min.css web/style.css",
+    "build:js": "webpack --config webpack.config.js",
+    "build:fonts": "npm run build:font-fontawesome",
+    "build:font-fontawesome": "cp -R node_modules/font-awesome/fonts/* web/fonts",
+    "jscs": "jscs ./src/AppBundle/Resources/js",
+    "jshint": "jshint ./src/AppBundle/Resources/js --reporter node_modules/jshint-stylish/index.js"
+  }
+}

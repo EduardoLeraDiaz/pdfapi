@@ -17,15 +17,16 @@ class DocumentController extends FOSRestController
     public function getDocumentsAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $entities = $em->getRepository('AppBundle:Document')->findAll();
+        $documents = [
+            'documents' => $em->getRepository('AppBundle:Document')->getAvaibleDocuments()
+        ];
 
-        return $this->view($entities, 200);
+        return new response(json_encode($documents), 200);
     }
 
     /**
      * create a document
      *
-     * @return View
      */
     public function postDocumentAction(Request $request)
     {
