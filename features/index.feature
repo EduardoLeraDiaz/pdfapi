@@ -1,5 +1,6 @@
 Feature: Test Api
   Scenario: Start
+    Given A void database
     When I send a GET request to "/"
     Then the response code should be 200
 
@@ -7,7 +8,6 @@ Feature: Test Api
     When I send a POST request to "/documents" with values:
       | title       | La catedral del mar      |
       | Description | Descripcion de la novela |
-    #And and the example pdf file
     Then the response code should be 200
     And the response should contain json:
     """
@@ -18,7 +18,6 @@ Feature: Test Api
     When I send a POST request to "/documents" with values:
       | title       | Los pilares de la tierra  |
       | description | Descripcion del libro     |
-    #And and the example pdf file
     Then the response code should be 200
     And the response should contain json:
     """

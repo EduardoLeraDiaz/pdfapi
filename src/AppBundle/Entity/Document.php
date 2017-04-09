@@ -3,6 +3,8 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * DocumentPDF
@@ -23,7 +25,7 @@ class Document
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank()
      * @ORM\Column(name="Title", type="string", length=255)
      */
     private $title;
@@ -36,8 +38,8 @@ class Document
     private $description;
 
     /**
-     * @var string
      *
+     * @Assert\NotBlank()
      * @ORM\Column(name="Document", type="blob")
      */
     private $document;
@@ -104,9 +106,9 @@ class Document
     /**
      * Set document
      *
-     * @param string $document
+     * @param string
      *
-     * @return DocumentPDF
+     * @return string in pdf format
      */
     public function setDocument($document)
     {
@@ -118,7 +120,7 @@ class Document
     /**
      * Get document
      *
-     * @return string
+     * @return mixed
      */
     public function getDocument()
     {
