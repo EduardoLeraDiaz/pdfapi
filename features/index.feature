@@ -6,7 +6,8 @@ Feature: Test Api
 
   Scenario: Creating a Document
     When I send a POST request to "/documents" with example pdf file and values:
-      | data       |'{"title":"Probe title","description":" probe description2"}'|
+      | title       | Probe title        |
+      | description | probe description  |
     Then the response code should be 200
     And the response should contain json:
     """
@@ -15,7 +16,8 @@ Feature: Test Api
 
   Scenario: Creating a Second Document
     When I send a POST request to "/documents" with example pdf file and values:
-      | data       |'{"title":"Probe title","description":" probe description2"}'|
+      | title       | Probe title2       |
+      | description | probe description2 |
     Then the response code should be 200
     And the response should contain json:
     """

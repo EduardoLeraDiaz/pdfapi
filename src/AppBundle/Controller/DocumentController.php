@@ -33,6 +33,7 @@ class DocumentController extends FOSRestController
         /**
          * var Serializer
          */
+        return new Response('{"created":"true"}',200);
         $serializer = $this->get('serializer');
         $document = $serializer->deserialize($request->get('data'), Document::class, 'json');
 
